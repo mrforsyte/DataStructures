@@ -1,4 +1,6 @@
 from stack.stack import Stack
+from linkedlist.linkedlist import LinkedList
+
 import pytest
 
 @pytest.fixture
@@ -11,10 +13,11 @@ def test_constructor():
 	assert isinstance(s, Stack)
 	assert len(s) == 0
 
+
+
 def test_push(stack):
 	stack.push(4)
 	assert len(stack) == 1
-
 
 def test_pop(stack):
 	stack.push('hi')
@@ -22,3 +25,8 @@ def test_pop(stack):
 	assert stack.pop() == 'error'
 	assert stack.pop() == 'hi'
 	assert stack.pop() == None
+
+
+def test_linkedlist():
+	a = LinkedList()
+	assert isinstance(a, LinkedList)
